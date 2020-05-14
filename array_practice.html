@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_practice.html</title>
+</head>
+<body>
+    <h1>array 테스트중...</h1>
+    <input type="text" id="msgs" placeholder="할일 입력..."/>
+    <button onclick="save()">저장</button>
+    <button onclick="show()">저장된 내용 보기</button>
+    <p id="console"></p>
+    <script>
+        var msgs = [];
+        function save(){
+            var m =document.querySelector("#msgs").value;
+            msgs.push(m);
+
+            alert("저장 되었습니다.");
+            document.querySelector("#msgs").value="";
+            //잘 나오는지 확인용도
+            console.log(m);
+            
+        }
+
+        function show(){
+            //todo 공백인것과 line을 합치기 위해 필요
+            var todo="";
+            for(var i=0;i<msgs.length; i++){
+                var line = msgs[i];
+                console.log (line);
+                todo=todo+line;
+               
+            }
+            document.querySelector("#console").innerText=todo;
+        }
+    </script>
+</body>
+</html>
