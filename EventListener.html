@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener.html</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>평소 function 함수만들기(global에 만듬)와 global에 안만든것 비교</h1>
+    <div class="box" 
+        onclick="clicked()"
+        onmouseover="mouseover()">div1</div>
+    
+    <div class="box" id="one">div2</div>
+    <script>
+        function clicked(){
+            console.log("클릭했네?");
+        }
+        
+        function mouseover(){
+            console.log("마우스 댔네?");
+        }
+    </script>
+</body>
+</html>
