@@ -30,10 +30,11 @@
             for(var i=0;i<msgs.length; i++){
                 var line = msgs[i];
                 console.log (line);
-                todo=todo+line;
-               
+                todo=todo+ 1 +line + "<br>"; //"<br>"을 추가한다.-2
+               //숫자도 추가하려면 +
             }
-            document.querySelector("#console").innerText=todo;
+            //문단처럼 쓴게 아래로 나오려면 innerHTML로 바꾸고 - 1
+            document.querySelector("#console").innerHTML=todo;
         }
     </script>
 </body>
