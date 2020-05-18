@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener과 if 조건문 쓰기 연습</title>
+</head>
+<body>
+    <input type="text" id="msgs" />
+    <button id="sendBtn">전송</button>
+    <p id="console"></p>
+    <script>
+        //버튼을 클릭했을때 실행할 함수 등록
+        
+        document.querySelector("#sendBtn")
+        .addEventListener("click", function(){
+            var msgs=document.querySelector("#msgs").value;
+            document.querySelector("#console").innerText=msgs;
+            document.querySelector("#msgs").value="";
+        });
+
+        //input 요소에 keyup 이벤트가 일어났을때 호출되는 함수 등록
+        //enter 눌렀을때 p요소에 전송
+        // function ()안에 매개변수는 그 쪽의 key인 엔터를 치라는 의미?
+        document.querySelector("#msgs")
+        .addEventListener("keyup", function(e){
+            if(e.key=="Enter"){
+                var msgs=document.querySelector("#msgs").value;
+                document.querySelector("#console").innerText=msgs;
+            }
+        });
+    </script>
+</body>
+</html>
