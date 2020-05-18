@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventListener2.html</title>
+    <style>
+        .box{
+            border: 2px solid red;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>EventListener2 함수 테스트 중...</h1>
+    <div class="box" id="one">div1</div>
+    <div class="box" id="two">div2</div>
+    <script>
+        // id가 one 인 div 를 click 하면 해당 div 의 innerText 가
+        // "clicked!" 로 바뀌도록 해 보세요.
+        document.querySelector("#one")
+        .addEventListener("click", function(){
+            this.innerText="clicked!";
+        });
+
+        document.querySelector("#two")
+        .addEventListener("click", function(){
+            this.innerText="clicked!";
+        });
+    </script>
+</body>
+</html>
