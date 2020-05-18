@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 while 연습</title>
+</head>
+<body>
+    <h1>반복문 while 테스트중...</h1>
+    <script>
+        //for 문과 똑같지만 쓰는 형태가 다름
+        //반복문 탈출하는 조건문과 같이이용
+        //javascript 에서는 많이 안씀
+        var names=["김구라", "해골", "원숭이", "주뎅이", "덩어리"];
+        var count=0;
+        //while(count<names.length){
+        //    console.log(names[count]);
+        //    count++;
+        //}
+
+        while(true){
+            console.log(names[count]);
+            count++;
+            if(count==names.length){
+                break; //반복문 탈출
+            };
+        }
+    </script>
+</body>
+</html>
