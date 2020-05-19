@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 활용예제 만들어보기</title>
+</head>
+<body>
+    <h1>반복문 활용 예제 테스트중...</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름..."/>
+    <button id="findBtn">검색</button>
+    <p id="console"></p>
+    <script>
+        //친구 이름 검색하기
+        //1. 친구 목록 만들기
+        var friends=[];
+        friends.push({name:"권소정", phone:"010", email: "aaa@"});
+        friends.push({name:"강호동", phone:"012", email: "bbb@"});
+        friends.push({name:"이수근", phone:"013", email: "ccc@"});
+        friends.push({name:"피오", phone:"014", email: "ddd@"});
+        friends.push({name:"은지원", phone:"015", email: "eee@"});
+        //친구 이름 검색하기
+        //1. 검색 클릭했을때 정보나오게하기
+        //2. array type 이니까 반복문 사용하기
+        //3. 검색한 값과 목록에 있는 이름이 같으면 차례대로 찾아서 나오게 하기
+        document.querySelector("#findBtn")
+        .addEventListener("click", function(){
+            var serch=document.querySelector("#inputName").value;
+            for(i=0; i<friends.length; i++){
+                var tmp=friends[i];
+                if(serch==tmp.name){
+                    document.querySelector("#console")
+                    .innerText=tmp.name + tmp.phone + tmp.email;
+                    break;
+                }else{
+                document.querySelector("#console")
+                .innerText=serch+" 으로 검색된 정보가 없습니다."
+                }
+                
+            }
+            document.querySelector("#inputName").value="";
+           
+        });
+        
+        //input 에 이름 입력하고 Enter하면 검색되기
+        //1. inputName 에서 치고 Enter를 누르면 검색
+        //2. Enter를 누르면 돌아가면서 찾아서 내용 나오게 하기
+       
+        document.querySelector("#inputName")
+        .addEventListener("keyup",function(event){
+            
+            if(event.key =="Enter"){
+                var serch=document.querySelector("#inputName").value;
+                for(i=0; i<friends.length; i++){
+                    var tmp =friends[i];
+                     //검색한 값이랑 입력된 정보랑 같다면
+                    if(serch==tmp.name){
+                    document.querySelector("#console")
+                    .innerText=tmp.name+tmp.phone+tmp.email;
+                    break;
+                    }else{
+                        document.querySelector("#console")
+                        .innerText=serch+" 으로 검색된 정보가 없습니다."
+                    }   
+                }
+                document.querySelector("#inputName").value="";  
+            }
+            
+        });
+        
+
+    </script>
+</body>
+</html>
