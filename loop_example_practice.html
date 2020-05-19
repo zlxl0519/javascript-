@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>친구 검색 만들기(forEach문, 논리연산자로 아닐때 사용</title>
+</head>
+<body>
+    <h1>반복문 활용 예제 테스트중...</h1>
+    <input type="text" id="inputName" placeholder="검색할 이름..."/>
+    <button id="findBtn">검색</button>
+    <p id="console"></p>
+    <script>
+        //친구 정보를 담을 배열
+        var friends=[];
+        //배열에 sample  데이터 담기
+        friends.push({name:"김구라",phone:"010",email:"aaa@"});
+        friends.push({name:"김진호",phone:"011",email:"bbb@"});
+        friends.push({name:"이봉하",phone:"017",email:"ccc@"});
+        friends.push({name:"이세희",phone:"018",email:"ddd@"});
+        friends.push({name:"백운용",phone:"019",email:"eee@"});
+
+        //친구목록 검색눌러서 검색해서 찾기(forEach 사용)
+        //1. input 한 이름과 정보이름이 차례대로 찾으면서 일치할때 p에 정보가 나온다.
+        document.querySelector("#findBtn")
+        .addEventListener("click", function(){
+            var serch=document.querySelector("#inputName").value;
+            var isInput=false;
+            friends.forEach(function(item, i){
+                var tmp=friends[i];
+                
+                if(serch==tmp.name){
+                    document.querySelector("#console")
+                    .innerText=tmp.name+tmp.phone+tmp.email;
+                    isInput=true;
+                }
+            });
+            if(isInput==false){
+                document.querySelector("#console").innerText="검색한 내용이 없습니다."
+            }
+            
+        });
+
+        //친구목록 정보 Enter 쳐서 검색하기(forEach 사용)
+        document.querySelector("#findBtn")
+        .addEventListener("keyup", function(event){
+            if(event.key=="Enter"){
+                
+                var isInput=false;
+                friends.forEach(function(item, i){
+                    var serch=document.querySelector("#inputName").value;
+                    var tmp=friends[i];
+                
+                    if(serch==tmp.name){
+                        document.querySelector("#console")
+                        .innerText=tmp.name+tmp.phone+tmp.email;
+                        isInput=true;
+                    }
+                });
+                
+                if(isInput==false){
+                document.querySelector("#console").innerText="검색한 내용이 없습니다."
+                }
+            
+            }
+            
+        });
+
+    </script>
+</body>
+</html>
