@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement.html</title>
+</head>
+<body>
+    <h1>createElement 테스트중...</h1>
+    
+    <button id="makeBtn">p 요소 동적으로 만들기</button>
+    <div id="wrapper">
+    
+    </div>
+    <script>
+        //동적 만들기 클릭 했을때 div 안에 p요소의 내용을 추가시킨다.
+        document.querySelector("#makeBtn")
+        .addEventListener("click", ()=>{
+            //p요소를 만드는 값을 참조하여 변수에 넣는다.
+            let p1 =document.createElement("p");
+            //p값의 내용을 적는다
+            p1.innerText="p1 요소입니다.";
+            //p요소를 div 에 넣는다.
+            document.querySelector("#wrapper").append(p1);
+
+        });
+
+       
+    </script>
+</body>
+</html>
