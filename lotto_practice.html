@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또만들기</title>
+</head>
+<body>
+    <h1>로또 추첨기 만들기 1.문자만 나오게(p) 2.문자를 그림으로 나오게(div)</h1>
+    <button id="roulette">추첨하기</button>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        document.querySelector("#roulette")
+        .addEventListener("click", function(){
+            var nums=[];
+        //if 문에 의해 중복숫자는 안나올때가 있어서
+        //숫자가 6개가 안나올때가 있다.
+        //그래서 더 만들어야되는데
+        //얼만큼 더 만들어야 될지 몰라 while 문을 쓴다.
+        while(true){
+            let lottoNum=parseInt(Math.random()*45)+1
+            
+            //indexOf 사용 : 배열이 있으면 그 배열번호 값이 나오고
+                //          없는 거라면 -1이 나오는 것.
+            //만일 nums번호가 lottoNum의 번호가 없을때
+            if(nums.indexOf(lottoNum)==-1){
+                nums.push(lottoNum);
+            };
+            //만일 nums에 숫자6개가 다 들어가면 탈출
+            if(nums.length==6){
+                break;
+            }
+        }
+        let line="";//number type을 string type 으로 바꾸기 위해서 
+        for(let i=0;i<nums.length;i++){
+            line=line+nums[i]+" ";//line+를 하지 않으면 nums[i]값 하나만 나옴.
+        };
+        document.querySelector("#wrapper").innerText=line;
+        });
+        
+    </script>
+</body>
+</html>
