@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_jQuery_createElement3.html</title>
+</head>
+<body>
+    <h1>createElement 테스트중...</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>김구라</td>
+                <td>노량진</td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        let td1=$("<td>").text("해골");
+        let td2 = $("<td>").text("행신동");
+        $("<tr>").append(td1).append(td2).appendTo("tbody");
+        
+        
+    </script>
+</body>
+</html>
